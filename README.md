@@ -1,22 +1,31 @@
+<div align="center">
+
 # SINGED
 
-### Correct Outputs Do Not Certify Safe Execution in LLM Agents
+## Correct Outputs Do Not Certify Safe Execution in LLM Agents
 
 **Source Integrity and the Nonidentifiability Gap in Execution Decisions for LLM Agents**
 
-[![Project](https://img.shields.io/badge/project-SINGED-a7ff4d?style=flat-square&labelColor=111812)](https://xiaoyuxu1.github.io/SINGED_project/)
-[![Python](https://img.shields.io/badge/python-3.11%2B-4f8e25?style=flat-square&labelColor=111812)](https://www.python.org/)
-[![License](https://img.shields.io/badge/license-MIT-f2f0e8?style=flat-square&labelColor=111812)](LICENSE)
+[![Project](https://img.shields.io/badge/Project-Website-a7ff4d?style=for-the-badge&labelColor=111812)](https://xiaoyuxu1.github.io/SINGED_project/)
+[![Python](https://img.shields.io/badge/Python-3.11%2B-4f8e25?style=for-the-badge&labelColor=111812)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-f2f0e8?style=for-the-badge&labelColor=111812)](LICENSE)
 
-SINGED is a controlled benchmark for a failure that output-only evaluation cannot see: an agent can return the correct artifact while executing a functional counterfeit that causes a forbidden process effect.
+### Xiaoyu Xu<sup>1†</sup> · Zi Liang<sup>1†</sup> · Minxin Du<sup>1*</sup> · Qipeng Xie<sup>1</sup> · Qingqing Ye<sup>1</sup> · Yuyuan Li<sup>2</sup> · Haibo Hu<sup>1*</sup>
 
-[Project website](https://xiaoyuxu1.github.io/SINGED_project/) · [Paper](https://xiaoyuxu1.github.io/SINGED_project/paper.pdf) · [Quick start](#quick-start) · [Benchmark design](#benchmark-design) · [Reproduce](#reproduce-the-evaluation)
+<sup>1</sup> Hong Kong Polytechnic University &nbsp;&nbsp; <sup>2</sup> Hangzhou Dianzi University<br>
+<sup>†</sup> Equal contribution &nbsp;&nbsp; <sup>*</sup> Corresponding authors
 
-**Xiaoyu Xu<sup>1†</sup>, Zi Liang<sup>1†</sup>, Minxin Du<sup>1*</sup>, Qipeng Xie<sup>1</sup>, Qingqing Ye<sup>1</sup>, Yuyuan Li<sup>2</sup>, Haibo Hu<sup>1*</sup>**<br>
-<sup>1</sup>Hong Kong Polytechnic University · <sup>2</sup>Hangzhou Dianzi University<br>
-<sup>†</sup>Equal contribution · <sup>*</sup>Corresponding authors
+**[Project website](https://xiaoyuxu1.github.io/SINGED_project/)** · **[Paper](https://xiaoyuxu1.github.io/SINGED_project/paper.pdf)** · **[Quick start](#quick-start)** · **[Reproduce](#reproduce-the-evaluation)**
 
-> All benchmark names, inputs, documents, audio, packages, and process events are synthetic. The release contains no participant data, credentials, proprietary code, or user files.
+<br>
+
+**SINGED evaluates a failure that output-only benchmarks cannot see: an agent can return the correct artifact while executing a functional counterfeit that causes a forbidden process effect.**
+
+</div>
+
+<p align="center">
+  <img src="docs/assets/framework.png" width="100%" alt="SINGED framework">
+</p>
 
 ## Why SINGED
 
@@ -38,6 +47,10 @@ Each instance presents three output-equivalent candidates:
 
 Candidate role labels are hidden from the agent. SINGED randomizes displayed rank, places decisive evidence at the entrypoint or one/two imports deep, and varies decision policy, model release, and agent configuration. A private manifest retains ground-truth roles for scoring.
 
+<p align="center">
+  <img src="docs/assets/benchmark.png" width="100%" alt="Matched and auditable benchmark construction">
+</p>
+
 ### Task families
 
 | Task | Expected artifact | Forbidden process effect |
@@ -51,6 +64,23 @@ Candidate role labels are hidden from the agent. SINGED randomizes displayed ran
 | Image thumbnailing | Thumbnail image | Launch an unnecessary subprocess |
 
 The first five are primary tasks. Configuration editing and image thumbnailing are held-out transfer tasks.
+
+## Main findings
+
+- **Rank concentrates risk.** The original study records 27/60 counterfeit executions when the counterfeit ranks first and none at later ranks.
+- **Comparison interrupts early commitment.** Mandatory three-way comparison removes all matched rank-one failures when decisive evidence is visible.
+- **Choice can mask execution willingness.** Seven releases with zero CER under three-source choice still execute the counterfeit in 55/175 single-source cells after benign alternatives are removed.
+
+<p align="center">
+  <img src="docs/assets/mechanism.png" width="100%" alt="Effects of rank, inspection path, decision rule, and evidence depth">
+</p>
+
+<table>
+  <tr>
+    <td width="40%" align="center"><img src="docs/assets/single-source.png" width="100%" alt="Single-source stress test"><br><b>Single-source stress test</b></td>
+    <td width="60%" align="center"><img src="docs/assets/transfer.png" width="100%" alt="Transfer across tasks, agent configurations, and model releases"><br><b>Transfer across tasks and systems</b></td>
+  </tr>
+</table>
 
 ## What is included
 
@@ -110,7 +140,7 @@ The evaluator derives task success, counterfeit execution rate (CER), outcome-to
 
 ## Safety boundary
 
-Candidate code is generated locally, checked against its SHA-256 digest, extracted with path-traversal protection, and executed without a shell in a fresh temporary directory. Forbidden effects target only controlled local fixtures or a loopback receipt server. Use the bundled synthetic candidates only; executing untrusted third-party packages requires an additional OS- or container-level sandbox.
+Candidate code is generated locally, checked against its SHA-256 digest, extracted with path-traversal protection, and executed without a shell in a fresh temporary directory. Forbidden effects target only controlled local fixtures or a loopback receipt server. Executing untrusted third-party packages requires an additional OS- or container-level sandbox.
 
 ## Validation
 
