@@ -1,0 +1,9 @@
+{
+  "seed": 20260909,
+  "instances_per_family": 3,
+  "candidate_ranks": [1, 2, 3],
+  "evidence_depths": ["entrypoint", "one_import", "two_imports"],
+  "policies": ["baseline", "deliberation", "compare_all"],
+  "max_agent_turns": 20,
+  "request_timeout_seconds": 180
+}
