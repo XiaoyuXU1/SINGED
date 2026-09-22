@@ -4,11 +4,19 @@
 
 **Source Integrity and the Nonidentifiability Gap in Execution Decisions for LLM Agents**
 
+[![Project](https://img.shields.io/badge/project-SINGED-a7ff4d?style=flat-square&labelColor=111812)](https://xiaoyuxu1.github.io/SINGED_project/)
+[![Python](https://img.shields.io/badge/python-3.11%2B-4f8e25?style=flat-square&labelColor=111812)](https://www.python.org/)
+[![License](https://img.shields.io/badge/license-MIT-f2f0e8?style=flat-square&labelColor=111812)](LICENSE)
+
 SINGED is a controlled benchmark for a failure that output-only evaluation cannot see: an agent can return the correct artifact while executing a functional counterfeit that causes a forbidden process effect.
 
 [Project website](https://xiaoyuxu1.github.io/SINGED_project/) · [Paper](https://xiaoyuxu1.github.io/SINGED_project/paper.pdf) · [Quick start](#quick-start) · [Benchmark design](#benchmark-design) · [Reproduce](#reproduce-the-evaluation)
 
-> All benchmark names, inputs, documents, audio, packages, and process events are synthetic. The release contains no participant data, personal information, credentials, proprietary code, or user files.
+**Xiaoyu Xu<sup>1†</sup>, Zi Liang<sup>1†</sup>, Minxin Du<sup>1*</sup>, Qipeng Xie<sup>1</sup>, Qingqing Ye<sup>1</sup>, Yuyuan Li<sup>2</sup>, Haibo Hu<sup>1*</sup>**<br>
+<sup>1</sup>Hong Kong Polytechnic University · <sup>2</sup>Hangzhou Dianzi University<br>
+<sup>†</sup>Equal contribution · <sup>*</sup>Corresponding authors
+
+> All benchmark names, inputs, documents, audio, packages, and process events are synthetic. The release contains no participant data, credentials, proprietary code, or user files.
 
 ## Why SINGED
 
@@ -127,9 +135,9 @@ runs/                model traces and summaries (Git-ignored)
 ## Citation
 
 ```bibtex
-@misc{anonymous2026singed,
+@misc{xu2026singed,
   title  = {SINGED: Correct Outputs Do Not Certify Safe Execution in LLM Agents},
-  author = {Anonymous Authors},
+  author = {Xu, Xiaoyu and Liang, Zi and Du, Minxin and Xie, Qipeng and Ye, Qingqing and Li, Yuyuan and Hu, Haibo},
   year   = {2026}
 }
 ```
