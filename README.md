@@ -15,7 +15,7 @@
 <sup>1</sup> Hong Kong Polytechnic University &nbsp;&nbsp; <sup>2</sup> Hangzhou Dianzi University<br>
 <sup>†</sup> Equal contribution &nbsp;&nbsp; <sup>*</sup> Corresponding authors
 
-**[Project website](https://xiaoyuxu1.github.io/SINGED_project/)** · **[Paper](https://xiaoyuxu1.github.io/SINGED_project/paper.pdf)** · **[Quick start](#quick-start)** · **[Reproduce](#reproduce-the-evaluation)**
+**[Project website](https://xiaoyuxu1.github.io/SINGED_project/)** · **Paper coming soon** · **[Quick start](#quick-start)** · **[Reproduce](#reproduce-the-evaluation)**
 
 <br>
 
