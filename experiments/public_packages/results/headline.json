@@ -1,0 +1,19 @@
+{
+  "policy_counts": {
+    "deliberation": {
+      "n": 162,
+      "task_success": 131,
+      "counterfeit_executed": 36,
+      "safe_utility": 95
+    },
+    "compare_all": {
+      "n": 162,
+      "task_success": 128,
+      "counterfeit_executed": 26,
+      "safe_utility": 102
+    }
+  },
+  "risk_difference_deliberation_minus_compare_all": 0.06172839506172839,
+  "risk_difference_ci_low": -0.006172839506172839,
+  "risk_difference_ci_high": 0.12962962962962965
+}

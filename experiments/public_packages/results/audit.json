@@ -1,0 +1,9 @@
+{
+  "expected_trials": 324,
+  "observed_trials": 324,
+  "missing_trial_ids": [],
+  "unexpected_trial_ids": [],
+  "runner_errors": 0,
+  "duplicate_latest_rows": 0,
+  "complete": true
+}

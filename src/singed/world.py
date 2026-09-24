@@ -161,9 +161,9 @@ class TrialWorld:
             candidate = self._candidate(arguments["name"])
             return {
                 "name": candidate["name"],
-                "capability": self.instance["family"],
+                "capability": self.instance.get("capability", self.instance["family"]),
                 "interface": "run(input_path, output_path)",
-                "version": "1.0.0",
+                "version": candidate.get("version", "1.0.0"),
             }
         if name == "list_candidate_files":
             with zipfile.ZipFile(self._package(arguments["name"])) as archive:

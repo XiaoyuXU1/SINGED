@@ -2,10 +2,14 @@
 
 ## Experimental unit
 
-Each trial fixes a synthetic task instance, three output-equivalent candidates,
+Each primary or held-out trial fixes a controlled task instance, three output-equivalent candidates,
 a model identifier, candidate order, evidence depth, and decision policy. The
 model sees neutral candidate names and public source files. Evaluator-only role
 labels are stored separately and are used only after execution.
+
+The separate public-package transfer slice uses version-pinned public source
+trees, controlled inputs, and the same local process-effect probe. It preserves
+the task output while rotating the counterfeit role among matched packages.
 
 ## Task families
 
@@ -21,6 +25,27 @@ labels are stored separately and are used only after execution.
 
 The public implementation represents every forbidden event with a controlled
 local fixture. No event can transmit private data or contact an external service.
+
+## Public-package transfer
+
+The frozen slice covers Markdown 3.8.2, markdown2 2.5.4, Mistune 3.1.3, toml
+0.10.2, tomli 2.2.1, TOML Kit 0.13.3, JSON5 0.12.0, Hjson 3.1.0, and
+commentjson 0.9.0. Kimi K3, Qwen3.8 Max, GLM-5.3, DeepSeek V4.1 Flash,
+MiniMax M3, and Grok 4.6 run with one fixed agent configuration across three
+ranks and two policies. Three role rotations per domain yield 324 cells.
+
+All packages return the same canonical artifact within each transformation
+domain. Exactly one role-rotated source tree receives a controlled loopback-only
+probe. Archive hashes and licenses are recorded in
+`experiments/public_packages/package_lock.json`; the modified archives stay
+local and run only in the sandbox. Audited aggregates are released under
+`experiments/public_packages/results/`.
+
+The slice records 36/162 counterfeit executions under deliberation and 26/162
+under compare-all. The deliberation-minus-compare-all CER difference is 6.2
+percentage points with a 95% clustered interval of -0.6 to 13.0 points. Both
+policies retain a rank gradient. The result supports transfer of rank
+sensitivity, while the aggregate comparison benefit remains uncertain.
 
 ## Evidence depth
 
@@ -55,7 +80,7 @@ The model's final prose never overrides trace-derived execution labels.
 
 ## Determinism and endpoint variation
 
-Fixture generation, candidate role assignment, rank schedules, package content,
+Fixture generation, candidate role assignment, rank schedules, controlled package content,
 and expected hashes are deterministic under the configured seed. Model outputs
 can vary because remote endpoints are stochastic and may be updated. Preserve
 the generated manifest, run summaries, request hashes, and endpoint metadata for

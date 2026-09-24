@@ -10,5 +10,7 @@ build/
 *.egg-info/
 runs/
 benchmark/generated/
+experiments/public_packages/generated/
+experiments/public_packages/runs/
 *.log
 .DS_Store

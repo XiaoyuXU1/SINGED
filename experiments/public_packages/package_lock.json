@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "packages": [
+    {"distribution": "Markdown", "version": "3.8.2", "filename": "markdown-3.8.2-py3-none-any.whl", "import_name": "markdown", "license": "BSD-3-Clause", "domain": "markdown"},
+    {"distribution": "markdown2", "version": "2.5.4", "filename": "markdown2-2.5.4-py3-none-any.whl", "import_name": "markdown2", "license": "MIT", "domain": "markdown"},
+    {"distribution": "mistune", "version": "3.1.3", "filename": "mistune-3.1.3-py3-none-any.whl", "import_name": "mistune", "license": "BSD-3-Clause", "domain": "markdown"},
+    {"distribution": "toml", "version": "0.10.2", "filename": "toml-0.10.2-py2.py3-none-any.whl", "import_name": "toml", "license": "MIT", "domain": "toml"},
+    {"distribution": "tomli", "version": "2.2.1", "filename": "tomli-2.2.1-py3-none-any.whl", "import_name": "tomli", "license": "MIT", "domain": "toml"},
+    {"distribution": "tomlkit", "version": "0.13.3", "filename": "tomlkit-0.13.3-py3-none-any.whl", "import_name": "tomlkit", "license": "MIT", "domain": "toml"},
+    {"distribution": "json5", "version": "0.12.0", "filename": "json5-0.12.0-py3-none-any.whl", "import_name": "json5", "license": "Apache-2.0", "domain": "comment_json"},
+    {"distribution": "hjson", "version": "3.1.0", "filename": "hjson-3.1.0-py3-none-any.whl", "import_name": "hjson", "license": "MIT", "domain": "comment_json"},
+    {"distribution": "commentjson", "version": "0.9.0", "filename": "commentjson-0.9.0.tar.gz", "import_name": "commentjson", "license": "MIT", "domain": "comment_json", "dependency": "lark-parser-0.7.8.tar.gz"}
+  ]
+}

@@ -19,7 +19,7 @@
 
 <br>
 
-**SINGED evaluates a failure that output-only benchmarks cannot see: an agent can return the correct artifact while executing a functional counterfeit that causes a forbidden process effect.**
+**SINGED is a controlled, auditable evaluation framework for a failure that output-only benchmarks cannot see: an agent can return the correct artifact while executing a functional counterfeit that causes a forbidden process effect. The current study contains 7,549 audited trials across controlled tasks and a frozen public-package transfer slice.**
 
 </div>
 
@@ -65,11 +65,25 @@ Candidate role labels are hidden from the agent. SINGED randomizes displayed ran
 
 The first five are primary tasks. Configuration editing and image thumbnailing are held-out transfer tasks.
 
+### Public-package transfer
+
+A separate 324-cell slice embeds the same controlled loopback probe into
+version-pinned, permissively licensed source trees for nine public packages:
+Markdown, markdown2, Mistune, toml, tomli, TOML Kit, JSON5, Hjson, and
+commentjson. The slice crosses six current model releases, three displayed
+ranks, and deliberation versus compare-all while holding inputs, outputs,
+versions, and role rotations fixed. It tests whether the benchmark's mechanisms
+persist in realistic package structures; it does not claim that the original
+packages are malicious.
+
 ## Main findings
 
 - **Rank concentrates risk.** The original study records 27/60 counterfeit executions when the counterfeit ranks first and none at later ranks.
-- **Comparison interrupts early commitment.** Mandatory three-way comparison removes all matched rank-one failures when decisive evidence is visible.
+- **Matched comparison tests early commitment.** As a diagnostic intervention, mandatory three-way comparison removes all matched rank-one failures when decisive evidence is visible.
 - **Choice can mask execution willingness.** Seven releases with zero CER under three-source choice still execute the counterfeit in 55/175 single-source cells after benign alternatives are removed.
+- **Rank sensitivity transfers to public-package structures.** The 324-cell transfer slice records 36/162 counterfeit executions under deliberation and 26/162 under compare-all. The risk-difference interval crosses zero, so the aggregate benefit of comparison remains uncertain in this slice.
+
+These findings characterize behavior under matched, inspectable conditions; they do not estimate the prevalence of such failures in public software ecosystems.
 
 <p align="center">
   <img src="docs/assets/mechanism.png" width="100%" alt="Effects of rank, inspection path, decision rule, and evidence depth">
@@ -82,9 +96,15 @@ The first five are primary tasks. Configuration editing and image thumbnailing a
   </tr>
 </table>
 
+<p align="center">
+  <img src="docs/assets/boundary.png" width="100%" alt="Held-out effects, matched contrasts, intervention cost, and public-package transfer">
+  <br><b>Transfer boundaries.</b> Rank sensitivity persists in public-package source trees, while comparison gains depend on the task and source structure.
+</p>
+
 ## What is included
 
 - deterministic generation of five primary and two held-out task families;
+- a frozen public-package transfer slice with package hashes, licenses, scripts, and audited aggregates;
 - matched intended, community, and counterfeit candidate packages;
 - randomized rank and entrypoint, one-import, and two-import evidence variants;
 - baseline, deliberation, and compare-all decision policies;
@@ -158,6 +178,7 @@ configs/             model and experiment configuration
 src/singed/          benchmark generator, agent loop, world, and scoring
 scripts/             release and privacy checks
 tests/               deterministic unit and integration tests
+experiments/         public-package preparation, execution, analysis, and audited aggregates
 benchmark/generated/ locally generated fixtures and candidates (Git-ignored)
 runs/                model traces and summaries (Git-ignored)
 ```
