@@ -7,6 +7,7 @@
 **Source Integrity and the Nonidentifiability Gap in Execution Decisions for LLM Agents**
 
 [![Project](https://img.shields.io/badge/Project-Website-a7ff4d?style=for-the-badge&labelColor=111812)](https://xiaoyuxu1.github.io/SINGED_project/)
+[![Paper](https://img.shields.io/badge/arXiv-2609.35889-b31b1b?style=for-the-badge&labelColor=111812)](https://arxiv.org/abs/2609.35889)
 [![Python](https://img.shields.io/badge/Python-3.11%2B-4f8e25?style=for-the-badge&labelColor=111812)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-f2f0e8?style=for-the-badge&labelColor=111812)](LICENSE)
 
@@ -15,7 +16,7 @@
 <sup>1</sup> Hong Kong Polytechnic University &nbsp;&nbsp; <sup>2</sup> Hangzhou Dianzi University<br>
 <sup>†</sup> Equal contribution &nbsp;&nbsp; <sup>*</sup> Corresponding authors
 
-**[Project website](https://xiaoyuxu1.github.io/SINGED_project/)** · **Paper coming soon** · **[Quick start](#quick-start)** · **[Reproduce](#reproduce-the-evaluation)**
+**[Project website](https://xiaoyuxu1.github.io/SINGED_project/)** · **[Paper](https://arxiv.org/abs/2609.35889)** · **[Quick start](#quick-start)** · **[Reproduce](#reproduce-the-evaluation)**
 
 <br>
 
